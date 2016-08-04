@@ -11,6 +11,7 @@ namespace ConsoleApplication2
     {
         static void Main(string[] args)
         {
+            //23
             var file = new FileInfo(@"E:\Login1.txt");
             FileStream stream = file.Open(FileMode.OpenOrCreate, FileAccess.Read, FileShare.None);
             stream.Close();
