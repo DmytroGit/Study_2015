@@ -1,0 +1,16 @@
+﻿@model IEnumerable<WebApplication2.Models.EF.Peoples>
+
+@{
+    ViewBag.Title = "Peoples";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Peoples</h2>
+@foreach (var item in Model)
+{
+    <p>@item.Id</p>
+    <p>@item.Name</p>
+    <p>@item.Old</p>
+    <p>@item.Cities_Id</p>
+    <hr />
+}

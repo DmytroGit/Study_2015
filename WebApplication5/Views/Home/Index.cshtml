@@ -1,0 +1,25 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <div>
+        @Html.ActionLink("Add", "Add", "Calc", new { x =10, y =20 }, null)
+        <hr />
+        @Html.ActionLink("Mul", "Mul", "Calc", new { x = 5, y = 5 }, null)
+        <hr />
+        @Html.ActionLink("Sub", "Sub", "Calc", new { x = 10, y = 3 }, null)
+        <hr />
+        @Html.ActionLink("Div", "Div", "Calc", new { x = 10, y = 2 }, null)
+        <hr />
+    </div>
+</body>
+</html>

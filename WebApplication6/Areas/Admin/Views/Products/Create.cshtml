@@ -1,0 +1,28 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Create</title>
+</head>
+<body>
+    <div> 
+        <h1>Admin Products Create</h1>
+        @Html.ActionLink("Index", "Index", "Home")
+        <hr />
+        @Html.ActionLink("Index", "Index", "Home", "Admin")@*что попало*@
+        <hr />
+        @Html.RouteLink("AdminHomeIndex", new { controller = "Home", action = "Index", area = "Admin" })
+        <hr />
+        @Html.RouteLink("AdminHomeIndex", new { controller = "Home", action = "Index", area = "" })@*выходит в другую область*@
+        <hr />
+        @Html.RouteLink("AdminHomeIndex", new { controller = "Home", action = "Index" })
+        <hr />
+    </div>
+</body>
+</html>

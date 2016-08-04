@@ -1,0 +1,43 @@
+﻿@model WebApplication2.Models.EF.Peoples
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Peoples</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Old)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Old)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Sities.Sity)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Sities.Sity)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

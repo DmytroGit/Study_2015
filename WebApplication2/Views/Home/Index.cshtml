@@ -1,0 +1,15 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Просмотр</h2>
+@Html.ActionLink("Peolpes List<Peolpes>", "Peoples", "Home")
+<br />
+@Html.ActionLink("Peolpes List<Sities>", "Sities", "Home")
+
+<h2>Редактирование</h2>
+@Html.ActionLink("Peolpes List<Peolpes> edit", "Index", "Peoples")
+<br />
+@Html.ActionLink("Peolpes List<Sities> edit", "Index", "Sities")
