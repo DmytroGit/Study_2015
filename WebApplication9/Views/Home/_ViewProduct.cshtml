@@ -1,0 +1,11 @@
+﻿<h1>_ViewProduct</h1>
+@model IEnumerable<WebApplication9.Models.Product>
+
+@foreach (var item in Model)
+{
+    <li>@item.ID</li>
+    <li>@item.Name</li>
+    <li>@item.Price</li>
+    <li>@item.CreatedDate</li>
+    <hr />
+}

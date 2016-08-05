@@ -1,0 +1,30 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Title</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+
+    @Html.ActionLink("Домашняя страница", "Home", "Home")
+    <hr />
+    @Html.ActionLink("Продукты", "Products", "Home")
+    <hr />
+    @Html.ActionLink("Сервис", "Services", "Home")
+    <hr />
+    @Html.ActionLink("О программе", "About", "Home")
+    <hr />
+
+    @RenderBody()
+
+
+    <footer>
+        <p>&copy; Dima</p>
+    </footer>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>
