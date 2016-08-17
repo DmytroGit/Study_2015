@@ -1,0 +1,32 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Registration</title>
+</head>
+<body>
+    <div> 
+        @using (Html.BeginForm())
+        {
+            @Html.TextBox("Login")
+            <br />
+            @Html.TextBox("Password")
+            <br />
+            @Html.TextBox("Double Password")
+            <br />
+            @Html.TextBox("Mail")
+            <br />
+            <input type="submit" name="mySubmit" value="Зарегестрироваться" />
+            <br />
+        }
+    </div>
+    @Html.ActionLink("Домашняя", "Index", "Home")
+    <hr />
+</body>
+</html>

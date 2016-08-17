@@ -1,0 +1,29 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>_Layout</title>
+</head>
+<body>
+    <div>
+        @Html.ActionLink("Пользователи", "Index", "Customers") 
+        <br />
+        <hr />
+        @Html.ActionLink("Продукты", "Index", "Products")
+        <br />
+        <hr />
+        @Html.ActionLink("Заказы", "Index", "Orders")
+        <br />
+        <hr />
+    </div>
+    <div>
+        @RenderBody()
+    </div>
+</body>
+</html>

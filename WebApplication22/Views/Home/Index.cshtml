@@ -1,0 +1,27 @@
+﻿@model IEnumerable<WebApplication22.Models.Product>
+@{
+    Layout = null;
+
+    var grid = new WebGrid(source: Model, rowsPerPage: 2);
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <div>
+        @grid.GetHtml(
+        columns: grid.Columns(
+            grid.Column(columnName: "Id", header: "ИД"),
+            grid.Column(columnName:"Name", header:"Имя"),
+            grid.Column(columnName: "Price", header: "Цена"),
+            grid.Column(columnName: "Description", 
+            header: "Описание",
+            format:@<a href="@item.Description">@item.Name</a>)))
+    </div>
+</body>
+</html>

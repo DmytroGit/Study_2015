@@ -1,0 +1,26 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <div>
+        @Html.ActionLink("Редактировать пользователей", "Index", "Customers")
+        <br /> 
+        <hr />
+        @Html.ActionLink("Редактировать продукты", "Index", "Products")
+        <br />
+        <hr />
+        @Html.ActionLink("Редактировать заказы", "Index", "Orders")
+        <br />
+        <hr />
+    </div>
+</body>
+</html>

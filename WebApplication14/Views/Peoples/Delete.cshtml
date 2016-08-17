@@ -1,0 +1,40 @@
+﻿@model WebApplication14.Models.EF.Peoples
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Peoples</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.People)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.People)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Sities.Sity)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Sities.Sity)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

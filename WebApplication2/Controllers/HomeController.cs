@@ -40,9 +40,9 @@ namespace WebApplication2.Controllers
             {
                 List<Sities> list = context.Sities.ToList();
 
-                var orders = context.Sities
-                    .Include(o => o.Sities)
-                    .Include(o => o.Sities);
+                //var orders = context.Sities
+                //    .Include(o => o.Sities)
+                //    .Include(o => o.Sities);
 
                 return View(list);
             }

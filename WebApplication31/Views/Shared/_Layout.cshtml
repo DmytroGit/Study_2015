@@ -1,0 +1,38 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>_Layout</title>
+</head>
+<body>
+    <div>
+        @Html.ActionLink("Главная", "Index", "Home")
+        <br />
+        <hr />
+        @Html.ActionLink("Пользователи", "Index", "Customers") 
+        <br />
+        <hr />
+        @Html.ActionLink("Товары", "Index", "Products")
+        <br />
+        <hr />
+        @Html.ActionLink("Заказы", "Index", "Orders")
+        <br />
+        <hr />
+        @Html.ActionLink("Отчет по продаже", "DetailsCustomer", "Home")
+        <br />
+        <hr />
+        @Html.ActionLink("Отчет за период по покупателям", "DetailsDateToDate", "Home")
+        <br />
+        <hr />
+        @RenderBody()
+        <br />
+        <hr />
+    </div>
+</body>
+</html>

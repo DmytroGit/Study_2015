@@ -1,0 +1,47 @@
+﻿@model WebApplication21.Models.RegistrationModel
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Registration</title>
+</head>
+<body>
+    <div>
+        <h1>Регистрация</h1>
+        <br />
+        <hr /> 
+        @Html.ActionLink("Домашняя", "Index", "Home")
+        <br />
+        <hr /> 
+        @using (Html.BeginForm())
+        {
+            @Html.Label("Логин")
+            <br />
+            @Html.TextBoxFor(m => m.Login)
+            <br />
+            @Html.Label("Пароль")
+            <br />
+            @Html.TextBoxFor(m => m.Password)
+            <br />
+            @Html.Label("Подтверждение пароля")
+            <br />
+            @Html.TextBoxFor(m => m.PasswordConfirm)
+            <br />
+            @Html.Label("Email")
+            <br />
+            @Html.TextBoxFor(m => m.Email)
+            <br />
+            @Html.Label("Кнопка зарегестрироваться")
+            <br />
+            <input type="submit" name="Submit" value="Зарегестрироваться" />
+            <br />
+            <hr />
+        } 
+    </div>
+</body>
+</html>

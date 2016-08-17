@@ -1,0 +1,30 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Enter</title>
+</head>
+<body>
+    <div>
+        <h2>Enter</h2>
+        @using (Html.BeginForm())
+        {
+            @Html.TextBox("Login")
+            <br />
+            @Html.TextBox("Password")
+            <br />
+            <input type="submit" name="muSubmit" value="Вход" />
+            <br />
+        }
+
+        @Html.ActionLink("Домашняя", "Index", "Home")
+        <hr /> 
+    </div>
+</body>
+</html>

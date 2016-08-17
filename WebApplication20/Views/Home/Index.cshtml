@@ -1,0 +1,33 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <div>
+        @using (Html.BeginForm("Arifm", "Home"))
+        {
+            @Html.TextBox("a")
+            <br />
+            @Html.TextBox("b")
+            <br />
+            <input type="submit" name="myButton" value="+" />
+            <br />
+            <input type="submit" name="myButton" value="-" />
+            <br />
+            <input type="submit" name="myButton" value="*" />
+            <br />
+            <input type="submit" name="myButton" value="/" />
+            <br />
+        } 
+        <h1>@ViewBag.Rezult</h1>
+    </div>
+</body>
+</html>
