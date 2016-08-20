@@ -7,3 +7,21 @@
 <h2>@ViewBag.Text</h2>
 <br />
 <hr />
+@using (Html.BeginForm("DetailsCustomer", "Home"))
+{
+    @Html.Label("Идентификионный номер пользователя")
+    <br />
+    <input type="number" name="IdUser" />
+    <br />
+    @Html.Label("Имя пользователя")
+    <br />
+    <input type="text" name="NameUser" />
+    <br />
+    @Html.Label("Фамилия пользователя")
+    <br />
+    <input type="text" name="FamilyUser" />
+    <br />
+    <input type="submit" name="MySubmit" value="Вычислить" />
+    <br />
+    <hr />
+}

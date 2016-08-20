@@ -11,6 +11,9 @@ namespace WebApplication31.Controllers
 {
     public class HomeController : Controller
     {
+        private CustomersOrdersProducts_DBEntities context = new CustomersOrdersProducts_DBEntities();
+
+
         // GET: Home
         public ActionResult Index()
         {
@@ -19,20 +22,27 @@ namespace WebApplication31.Controllers
 
         public ActionResult DetailsDateToDate()
         {
+            ViewBag.Text = "Отчет за период !Post";
+            return View();
+        }
+
+        public ActionResult DetailsCustomer()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult DetailsDateToDate(string NameStart,string NameFinish)
+        {
             try
             {
-                using (CustomersOrdersProducts_DBEntities context = new CustomersOrdersProducts_DBEntities())
-                {
-                    var list = context.Orders.
-                        Include(c => c.Products).
-                        Include(c => c.Customers);
+                var list = context.Orders.
+                    Include(c => c.Products).
+                    Include(c => c.Customers);
+                
+                    ViewBag.Text = "Отчет за период Post";
 
-                    list.ToList();
-
-                    ViewBag.Text = "Отчет за период по покупателям";
-
-                    return View(list);
-                }
+                    return View(list.ToList());
             }
             catch (Exception exp)
             {
@@ -40,8 +50,8 @@ namespace WebApplication31.Controllers
                 return View("Error");
             }
         }
-
-        public ActionResult DetailsCustomer()
+        [HttpPost]
+        public ActionResult DetailsCustomer(int? IdUser, string NameUser, string FamilyUser)
         {
             try
             {
@@ -53,7 +63,7 @@ namespace WebApplication31.Controllers
 
                     list.ToList();
 
-                    ViewBag.Text = "Отчет по продаже";
+                    ViewBag.Text = "Отчет по покупателям";
 
                     return View(list);
                 }   
