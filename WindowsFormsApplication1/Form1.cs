@@ -20,8 +20,8 @@ namespace WindowsFormsApplication1
         private void Form1_Load(object sender, EventArgs e)
         {
             string[] drives = Directory.GetLogicalDrives();//загруска лок дисков
-            DirectoryInfo directory; //инфо
-            TreeNode tn;//создание дерева
+            DirectoryInfo directory; //инфо/
+            TreeNode tn; //создание дерева
 
             foreach (string s in drives)
             {
