@@ -32,17 +32,28 @@ namespace WebApplication31.Controllers
         }
 
         [HttpPost]
-        public ActionResult DetailsDateToDate(string NameStart,string NameFinish)
+        public ActionResult DetailsDateToDate(DateTime NameStart, DateTime NameFinish)
         {
             try
             {
-                var list = context.Orders.
-                    Include(c => c.Products).
-                    Include(c => c.Customers);
-                
-                    ViewBag.Text = "Отчет за период Post";
+                //var list = context.Orders.
+                //    Include(c => c.Products).
+                //    Include(c => c.Customers);
 
-                    return View(list.ToList());
+                var newContext = context.Orders.ToList();
+
+                var list =
+                    (from myList in newContext
+                     where
+                            myList.DateOrder >= NameStart &&
+                            myList.DateOrder <= NameFinish
+                     select myList).ToList();
+
+                ViewBag.Text = "Отчет за период Post";
+                ViewBag.CountOrder = 10;
+                ViewBag.SummPrice = 101;
+
+                return View();
             }
             catch (Exception exp)
             {
@@ -51,28 +62,35 @@ namespace WebApplication31.Controllers
             }
         }
         [HttpPost]
-        public ActionResult DetailsCustomer(int? IdUser, string NameUser, string FamilyUser)
+        public ActionResult DetailsCustomer(int? IdUser, string FirstName, string LastName)
         {
             try
             {
-                using (CustomersOrdersProducts_DBEntities context = new CustomersOrdersProducts_DBEntities())
-                {
-                    var list = context.Orders.
-                            Include(c => c.Products).
-                            Include(c => c.Customers);
+                var newContext = context.Orders.ToList();
 
-                    list.ToList();
+                //var list =
+                //    (from myList in newContext
+                //     select myList).Sum();
 
-                    ViewBag.Text = "Отчет по покупателям";
+                var list =
+                    (from myList in newContext
+                     where
+                            myList.Customers.Id == IdUser ||
+                            myList.Customers.FirstName.Trim().ToLower() == FirstName.ToLower() ||
+                            myList.Customers.LastName.Trim().ToLower() == LastName.ToLower()
 
-                    return View(list);
-                }   
+                     select myList).ToList();
+
+                ViewBag.Text = "Отчет по покупателям";
+                ViewBag.SummOrdersCustomer = 89;
+
+                return View(list);
             }
             catch (Exception exp)
             {
                 ViewBag.Error = exp.Message;
                 return View("Error");
-            }  
+            }
         }
     }
 }
