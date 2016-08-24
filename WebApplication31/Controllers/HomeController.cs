@@ -42,16 +42,25 @@ namespace WebApplication31.Controllers
 
                 var newContext = context.Orders.ToList();
 
-                var list =
-                    (from myList in newContext
-                     where
-                            myList.DateOrder >= NameStart &&
-                            myList.DateOrder <= NameFinish
-                     select myList).ToList();
+                //Количество продаж
+                var qyeryCountOrdersProducts = newContext
+                    .Where(emp => emp.DateOrder >= NameStart)
+                    .Where(emp => emp.DateOrder <= NameFinish)
+                    .Select(emp => emp.CountProduct)
+                    .Sum();
+
+
+                //Количество продаж
+                var qyerySumPriceProducts = newContext
+                    .Where(emp => emp.DateOrder >= NameStart)
+                    .Where(emp => emp.DateOrder <= NameFinish)
+                    .Select(emp => emp.CountProduct * emp.Products.Price)
+                    .Sum();
+
 
                 ViewBag.Text = "Отчет за период Post";
-                ViewBag.CountOrder = 10;
-                ViewBag.SummPrice = 101;
+                ViewBag.CountOrder = qyeryCountOrdersProducts;
+                ViewBag.SummPrice = qyerySumPriceProducts;
 
                 return View();
             }
@@ -68,9 +77,11 @@ namespace WebApplication31.Controllers
             {
                 var newContext = context.Orders.ToList();
 
-                //var list =
-                //    (from myList in newContext
-                //     select myList).Sum();
+                //Количество продаж по пользователю
+                var qyerySumOrdersCustomer = newContext
+                    .Where(emp => emp.Customers.FirstName.Trim() == FirstName)
+                    .Select(emp => emp.CountProduct).Sum();
+
 
                 var list =
                     (from myList in newContext
@@ -82,7 +93,7 @@ namespace WebApplication31.Controllers
                      select myList).ToList();
 
                 ViewBag.Text = "Отчет по покупателям";
-                ViewBag.SummOrdersCustomer = 89;
+                ViewBag.SummOrdersCustomer = qyerySumOrdersCustomer;
 
                 return View(list);
             }

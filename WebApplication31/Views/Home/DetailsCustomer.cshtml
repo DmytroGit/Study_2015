@@ -62,12 +62,6 @@
             <th>
                 @Html.DisplayNameFor(model => model.Customers.Email)
             </th>
-            <th>
-                Информацию о покупках пользователя
-            </th>
-            <th>
-                Общая сумма покупок пользователя
-            </th>
         </tr>
 
         @foreach (var item in Model)
@@ -106,13 +100,9 @@
                 <td>
                     @Html.DisplayFor(modelItem => item.Customers.Email)
                 </td>
-                <td>
-                    @ViewBag.CountOrder
-                </td>
-                <td>
-                    @ViewBag.SummOrdersCustomer
-                </td>
             </tr>
         }
     </table>
+
+    <p>Общая сумма покупок пользователя: <b>@ViewBag.SummOrdersCustomer</b></p>
 }

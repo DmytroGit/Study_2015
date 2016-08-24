@@ -1,0 +1,47 @@
+﻿@model WebApplication34.Models.Order
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <div>
+        @using (Html.BeginForm())
+        {
+            <p>
+                @Html.LabelFor(x => x.Name)
+                @Html.EditorFor(x => x.Name)
+                @Html.ValidationMessageFor(x => x.Name)
+            </p>
+            <p>
+                @Html.LabelFor(x => x.Address)
+                @Html.EditorFor(x => x.Address)
+                @Html.ValidationMessageFor(x => x.Address)
+            </p>
+            <p>
+                @Html.LabelFor(x => x.Email)
+                @Html.EditorFor(x => x.Email)
+                @Html.ValidationMessageFor(x => x.Email)
+            </p>
+            <p>
+                @Html.LabelFor(x => x.Date)
+                @Html.EditorFor(x => x.Date)
+                @Html.ValidationMessageFor(x => x.Date)
+            </p>
+            <p>
+                @Html.LabelFor(x => x.TermsAccepted)
+                @Html.EditorFor(x => x.TermsAccepted)
+                @Html.ValidationMessageFor(x => x.TermsAccepted)
+            </p>
+
+            <input type="submit"  value="Отправить" />
+        } 
+    </div>
+</body>
+</html>

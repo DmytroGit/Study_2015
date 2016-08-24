@@ -22,12 +22,19 @@ namespace WebApplication31.Models.EF
         }
     
         public int Id { get; set; }
+
+        [Required(ErrorMessage = "Имя продукта обязательно для заполнения")]
+        [StringLength(100)]
         public string NameProduct { get; set; }
+
+        [Required(ErrorMessage = "Цена обязательна для заполнения")]
         public decimal Price { get; set; }
 
+        [Required(ErrorMessage = "Описание обязательна для заполнения")]
         [UIHint("MultilineText")]
         public string Description { get; set; }
 
+        [Required(ErrorMessage = "Дата обязательна для заполнения")]
         [DataType(DataType.Date)]
         public System.DateTime DateAdd { get; set; }
     

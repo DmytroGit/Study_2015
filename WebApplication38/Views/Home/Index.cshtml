@@ -1,0 +1,10 @@
+﻿@model WebApplication38.Models.Order
+@{
+    ViewBag.Title = "Home Page";
+}
+
+@using (Html.BeginForm())
+{
+    @Html.EditorForModel()
+    <input type="submit" value="OK" />
+}
