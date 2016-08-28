@@ -10,9 +10,13 @@ using WebApplication31.Models.EF;
 
 namespace WebApplication31.Controllers
 {
+    [Authorize]
     public class CustomersController : Controller
     {
         private CustomersOrdersProducts_DBEntities db = new CustomersOrdersProducts_DBEntities();
+
+        //перенаправление для входа
+        //public ActionResult 
 
         // GET: Customers
         public ActionResult Index()
