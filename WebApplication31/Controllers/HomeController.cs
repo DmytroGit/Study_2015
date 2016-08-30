@@ -13,7 +13,7 @@ namespace WebApplication31.Controllers
     public class HomeController : Controller
     {
         private CustomersOrdersProducts_DBEntities context = new CustomersOrdersProducts_DBEntities();
-        
+
         // GET: Home
         public ActionResult Index()
         {
@@ -82,7 +82,7 @@ namespace WebApplication31.Controllers
                     .Sum();
 
 
-                
+
                 ViewBag.CountOrder = qyeryCountOrdersProducts;
                 ViewBag.SummPrice = qyerySumPriceProducts;
 
@@ -96,30 +96,34 @@ namespace WebApplication31.Controllers
         }
 
         [HttpPost]
-        public ActionResult DetailsCustomer(int? IdUser, string FirstName, string LastName)
+        public ActionResult DetailsCustomer(DetailsCustomerModel model)
         {
             try
             {
-                var newContext = context.Orders.ToList();
+                if (ModelState.IsValid)
+                {
+                    var newContext = context.Orders.ToList();
 
-                //Количество продаж по пользователю
-                var qyerySumOrdersCustomer = newContext
-                    .Where(emp => emp.Customers.FirstName.Trim() == FirstName)
-                    .Select(emp => emp.CountProduct).Sum();
+                    //Количество продаж по пользователю
+                    var qyerySumOrdersCustomer = newContext
+                        .Where(emp => emp.Customers.FirstName.Trim() == model.FirstName)
+                        .Select(emp => emp.CountProduct).Sum();
 
 
-                var list =
-                    (from myList in newContext
-                     where
-                            myList.Customers.Id == IdUser ||
-                            myList.Customers.FirstName.Trim().ToLower() == FirstName.ToLower() ||
-                            myList.Customers.LastName.Trim().ToLower() == LastName.ToLower()
+                    var list =
+                        (from myList in newContext
+                         where
+                                myList.Customers.Id == model.Id ||
+                                myList.Customers.FirstName.Trim().ToLower() == model.FirstName.ToLower() ||
+                                myList.Customers.LastName.Trim().ToLower() == model.LastName.ToLower()
 
-                     select myList).ToList();
+                         select myList).ToList();
 
-                ViewBag.SummOrdersCustomer = qyerySumOrdersCustomer;
+                    ViewBag.SummOrdersCustomer = qyerySumOrdersCustomer;
 
-                return View(list);
+                    return View(list);
+                }
+                return View();
             }
             catch (Exception exp)
             {
