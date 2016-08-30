@@ -11,27 +11,16 @@ namespace WebApplication31.Models.EF
 {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
-
+    
     public partial class Orders
     {
         public int Id { get; set; }
-
-        [Required(ErrorMessage = "Количество обязательна для заполнения")]
         public int CountProduct { get; set; }
-
-        [Required(ErrorMessage = "Дата обязательна для заполнения")]
-        [DataType(DataType.Date)]
         public System.DateTime DateOrder { get; set; }
-
-        [Required(ErrorMessage = "Продукт обязательный для заполнения")]
         public int Products_Id { get; set; }
-
-        [Required(ErrorMessage = "Пользователь обязательный для заполнения")]
-        public int Orders_Id { get; set; }
-
+        public int Customers_Id { get; set; }
+    
         public virtual Customers Customers { get; set; }
-
         public virtual Products Products { get; set; }
     }
 }

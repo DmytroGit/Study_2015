@@ -39,7 +39,7 @@ namespace WebApplication31.Controllers
         // GET: Orders/Create
         public ActionResult Create()
         {
-            ViewBag.Orders_Id = new SelectList(db.Customers, "Id", "FirstName");
+            ViewBag.Customers_Id = new SelectList(db.Customers, "Id", "FirstName");
             ViewBag.Products_Id = new SelectList(db.Products, "Id", "NameProduct");
             return View();
         }
@@ -49,7 +49,7 @@ namespace WebApplication31.Controllers
         // сведения см. в статье http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,CountProduct,DateOrder,Products_Id,Orders_Id")] Orders orders)
+        public ActionResult Create([Bind(Include = "Id,CountProduct,DateOrder,Products_Id,Customers_Id")] Orders orders)
         {
             if (ModelState.IsValid)
             {
@@ -58,7 +58,7 @@ namespace WebApplication31.Controllers
                 return RedirectToAction("Index");
             }
 
-            ViewBag.Orders_Id = new SelectList(db.Customers, "Id", "FirstName", orders.Orders_Id);
+            ViewBag.Customers_Id = new SelectList(db.Customers, "Id", "FirstName", orders.Customers_Id);
             ViewBag.Products_Id = new SelectList(db.Products, "Id", "NameProduct", orders.Products_Id);
             return View(orders);
         }
@@ -75,7 +75,7 @@ namespace WebApplication31.Controllers
             {
                 return HttpNotFound();
             }
-            ViewBag.Orders_Id = new SelectList(db.Customers, "Id", "FirstName", orders.Orders_Id);
+            ViewBag.Customers_Id = new SelectList(db.Customers, "Id", "FirstName", orders.Customers_Id);
             ViewBag.Products_Id = new SelectList(db.Products, "Id", "NameProduct", orders.Products_Id);
             return View(orders);
         }
@@ -85,7 +85,7 @@ namespace WebApplication31.Controllers
         // сведения см. в статье http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,CountProduct,DateOrder,Products_Id,Orders_Id")] Orders orders)
+        public ActionResult Edit([Bind(Include = "Id,CountProduct,DateOrder,Products_Id,Customers_Id")] Orders orders)
         {
             if (ModelState.IsValid)
             {
@@ -93,7 +93,7 @@ namespace WebApplication31.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.Orders_Id = new SelectList(db.Customers, "Id", "FirstName", orders.Orders_Id);
+            ViewBag.Customers_Id = new SelectList(db.Customers, "Id", "FirstName", orders.Customers_Id);
             ViewBag.Products_Id = new SelectList(db.Products, "Id", "NameProduct", orders.Products_Id);
             return View(orders);
         }

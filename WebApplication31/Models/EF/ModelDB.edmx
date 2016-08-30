@@ -23,7 +23,7 @@
           <Property Name="CountProduct" Type="int" Nullable="false" />
           <Property Name="DateOrder" Type="date" Nullable="false" />
           <Property Name="Products_Id" Type="int" Nullable="false" />
-          <Property Name="Orders_Id" Type="int" Nullable="false" />
+          <Property Name="Customers_Id" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="Products">
           <Key>
@@ -43,7 +43,7 @@
               <PropertyRef Name="Id" />
             </Principal>
             <Dependent Role="Orders">
-              <PropertyRef Name="Orders_Id" />
+              <PropertyRef Name="Customers_Id" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -96,7 +96,7 @@
           <Property Name="CountProduct" Type="Int32" Nullable="false" />
           <Property Name="DateOrder" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="Products_Id" Type="Int32" Nullable="false" />
-          <Property Name="Orders_Id" Type="Int32" Nullable="false" />
+          <Property Name="Customers_Id" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Customers" Relationship="Self.FK_Orders_Customers" FromRole="Orders" ToRole="Customers" />
           <NavigationProperty Name="Products" Relationship="Self.FK_Orders_Products" FromRole="Orders" ToRole="Products" />
         </EntityType>
@@ -119,7 +119,7 @@
               <PropertyRef Name="Id" />
             </Principal>
             <Dependent Role="Orders">
-              <PropertyRef Name="Orders_Id" />
+              <PropertyRef Name="Customers_Id" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -172,7 +172,7 @@
                 <ScalarProperty Name="CountProduct" ColumnName="CountProduct" />
                 <ScalarProperty Name="DateOrder" ColumnName="DateOrder" />
                 <ScalarProperty Name="Products_Id" ColumnName="Products_Id" />
-                <ScalarProperty Name="Orders_Id" ColumnName="Orders_Id" />
+                <ScalarProperty Name="Customers_Id" ColumnName="Customers_Id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

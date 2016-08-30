@@ -14,9 +14,6 @@ namespace WebApplication31.Controllers
     {
         private CustomersOrdersProducts_DBEntities db = new CustomersOrdersProducts_DBEntities();
 
-        //перенаправление для входа
-        //public ActionResult 
-
         // GET: Customers
         public ActionResult Index()
         {
