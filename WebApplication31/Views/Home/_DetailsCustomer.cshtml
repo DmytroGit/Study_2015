@@ -1,0 +1,10 @@
+﻿@model WebApplication31.Models.DetailsCustomerModel
+
+@using (Html.BeginForm("DetailsCustomer", "Home"))
+{
+    @Html.EditorForModel()
+    <br />
+    <input type="submit" value="Вычислить" />
+    <br />
+    <hr />
+}

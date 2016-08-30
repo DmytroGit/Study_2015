@@ -152,6 +152,15 @@ namespace WebApplication45.Controllers
             if (ModelState.IsValid)
             {
                 var user = new ApplicationUser { UserName = model.Email, Email = model.Email };
+                //user.Roles = "Admin";
+                SimpleMembershipProvider membership
+                // Поиск пользователя с логином admin
+                if (membership.GetUser("admin", false) == null)
+                {
+                    membership.CreateUserAndAccount("admin", "qwe123"); // создание пользователя
+                    roles.AddUsersToRoles(new[] { "admin" }, new[] { "Admin" }); // установка роли для пользователя
+                }
+
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {

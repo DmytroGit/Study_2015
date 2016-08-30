@@ -123,6 +123,8 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountModels.cs" />
+    <Compile Include="Models\DetailsCustomerModel.cs" />
+    <Compile Include="Models\DetailsDateToDateModel.cs" />
     <Compile Include="Models\EF\Customers.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
@@ -179,6 +181,9 @@
     <Content Include="Views\Home\DetailsDateToDate.cshtml" />
     <Content Include="Views\Home\DetailsCustomer.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Home\_DetailDateToDate.cshtml" />
+    <Content Include="Views\Home\_DetailsCustomer.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

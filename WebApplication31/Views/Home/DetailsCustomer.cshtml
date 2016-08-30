@@ -4,26 +4,8 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>@ViewBag.Text</h2>
 <hr />
-@using (Html.BeginForm("DetailsCustomer", "Home"))
-{
-    @Html.Label("Идентификионный номер пользователя")
-    <br />
-    <input type="number" name="IdUser" />
-    <br />
-    @Html.Label("Имя пользователя")
-    <br />
-    <input type="text" name="FirstName" />
-    <br />
-    @Html.Label("Фамилия пользователя")
-    <br />
-    <input type="text" name="LastName" />
-    <br />
-    <input type="submit" name="MySubmit" value="Вычислить" />
-    <br />
-    <hr />
-}
+@Html.Action("_DetailsCustomer")
 
 @if (Model != null)
 {

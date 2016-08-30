@@ -1,0 +1,21 @@
+﻿@model WebApplication49.Models.ValidTest
+
+<div>
+    @using (Html.BeginForm())
+    {
+        @Html.LabelFor(x => x.StartDate)
+        <br />
+            @Html.EditorFor(x => x.StartDate)
+            @Html.ValidationMessageFor(x => x.StartDate)
+            <br />
+            @Html.LabelFor(x => x.FinishDate)
+            <br />
+            @Html.EditorFor(x => x.FinishDate)
+            @Html.ValidationMessageFor(x => x.FinishDate)
+            <br />
+
+            <input type="submit" value="Отправить" />
+    }
+</div>
+
+

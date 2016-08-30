@@ -10,7 +10,6 @@ using WebApplication31.Models.EF;
 
 namespace WebApplication31.Controllers
 {
-    [Authorize]
     public class CustomersController : Controller
     {
         private CustomersOrdersProducts_DBEntities db = new CustomersOrdersProducts_DBEntities();

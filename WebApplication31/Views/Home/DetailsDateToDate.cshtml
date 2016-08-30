@@ -4,24 +4,5 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>@ViewBag.Text</h2>
 <hr />
-
-@using (Html.BeginForm("DetailsDateToDate", "Home"))
-{
-    @Html.Label("Дата с которой построить отчет")
-    <br />
-    <input type="date" name="NameStart" />
-    <br />
-    @Html.Label("Дата до котрой построить отчет")
-    <br />
-    <input type="date" name="NameFinish" />
-    <br />
-    <input type="submit" name="MySubmit" value="Вычислить" />
-    <br />
-    <hr />
-}
-
-Количество продаж: @ViewBag.CountOrder
-<br />
-Сумма за период: @ViewBag.SummPrice
+@Html.Action("_DetailsDateToDate")

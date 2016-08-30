@@ -1,0 +1,12 @@
+﻿@using WebApplication47.Models
+@model  WebApplication47.Models.PartialModel
+   
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+@Html.Partial("_MyPartial", new PartialModel())

@@ -6,14 +6,14 @@ using System.Web.Mvc;
 using WebApplication31.Models.EF;
 using System.Data;
 using System.Data.Entity;
+using WebApplication31.Models;
 
 namespace WebApplication31.Controllers
 {
     public class HomeController : Controller
     {
         private CustomersOrdersProducts_DBEntities context = new CustomersOrdersProducts_DBEntities();
-
-
+        
         // GET: Home
         public ActionResult Index()
         {
@@ -22,17 +22,41 @@ namespace WebApplication31.Controllers
 
         public ActionResult DetailsDateToDate()
         {
-            ViewBag.Text = "Отчет за период !Post";
             return View();
         }
-
         public ActionResult DetailsCustomer()
         {
             return View();
         }
 
+        [ChildActionOnly]
+        public ActionResult _DetailsDateToDate()
+        {
+            return PartialView("_DetailDateToDate");
+        }
+
+        [ChildActionOnly]
         [HttpPost]
-        public ActionResult DetailsDateToDate(DateTime NameStart, DateTime NameFinish)
+        public ActionResult _DetailsDateToDate(DetailsDateToDateModel model)
+        {
+            return PartialView("_DetailDateToDate");
+        }
+
+        [ChildActionOnly]
+        public ActionResult _DetailsCustomer()
+        {
+            return PartialView("_DetailsCustomer");
+        }
+
+        [ChildActionOnly]
+        [HttpPost]
+        public ActionResult _DetailsCustomer(DetailsCustomerModel model)
+        {
+            return PartialView("_DetailsCustomer");
+        }
+
+        [HttpPost]
+        public ActionResult DetailsDateToDate(DetailsDateToDateModel model)
         {
             try
             {
@@ -44,21 +68,21 @@ namespace WebApplication31.Controllers
 
                 //Количество продаж
                 var qyeryCountOrdersProducts = newContext
-                    .Where(emp => emp.DateOrder >= NameStart)
-                    .Where(emp => emp.DateOrder <= NameFinish)
+                    .Where(emp => emp.DateOrder >= model.StartDate)
+                    .Where(emp => emp.DateOrder <= model.FinishDate)
                     .Select(emp => emp.CountProduct)
                     .Sum();
 
 
                 //Количество продаж
                 var qyerySumPriceProducts = newContext
-                    .Where(emp => emp.DateOrder >= NameStart)
-                    .Where(emp => emp.DateOrder <= NameFinish)
+                    .Where(emp => emp.DateOrder >= model.StartDate)
+                    .Where(emp => emp.DateOrder <= model.FinishDate)
                     .Select(emp => emp.CountProduct * emp.Products.Price)
                     .Sum();
 
 
-                ViewBag.Text = "Отчет за период Post";
+                
                 ViewBag.CountOrder = qyeryCountOrdersProducts;
                 ViewBag.SummPrice = qyerySumPriceProducts;
 
@@ -70,6 +94,7 @@ namespace WebApplication31.Controllers
                 return View("Error");
             }
         }
+
         [HttpPost]
         public ActionResult DetailsCustomer(int? IdUser, string FirstName, string LastName)
         {
@@ -92,7 +117,6 @@ namespace WebApplication31.Controllers
 
                      select myList).ToList();
 
-                ViewBag.Text = "Отчет по покупателям";
                 ViewBag.SummOrdersCustomer = qyerySumOrdersCustomer;
 
                 return View(list);

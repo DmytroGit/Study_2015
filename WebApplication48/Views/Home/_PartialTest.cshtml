@@ -1,0 +1,20 @@
+﻿@model WebApplication48.Models.PartialTestModel
+
+@using (Html.BeginForm())
+{
+    @Html.LabelFor(m => m.Id)
+    @Html.TextBoxFor(m => m.Id )
+    @Html.ValidationMessageFor(m => m.Id)
+    <br />
+    @Html.LabelFor(m => m.Name)
+    @Html.TextBoxFor(m => m.Name)
+    @Html.ValidationMessageFor(m => m.Name)
+    <br />
+    @Html.LabelFor(m => m.Old)
+    @Html.TextBoxFor(m => m.Old)
+    @Html.ValidationMessageFor(m => m.Old)
+    <br />
+
+    <input type="submit" value="Ok" />
+    <br />
+}   
