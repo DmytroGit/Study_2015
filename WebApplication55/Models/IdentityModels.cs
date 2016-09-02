@@ -4,7 +4,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 
-namespace WebApplication54.Models
+namespace WebApplication55.Models
 {
     // Чтобы добавить данные профиля для пользователя, можно добавить дополнительные свойства в класс ApplicationUser. Дополнительные сведения см. по адресу: http://go.microsoft.com/fwlink/?LinkID=317594.
     public class ApplicationUser : IdentityUser
@@ -14,15 +14,8 @@ namespace WebApplication54.Models
             // Обратите внимание, что authenticationType должен совпадать с типом, определенным в CookieAuthenticationOptions.AuthenticationType
             var userIdentity = await manager.CreateIdentityAsync(this, DefaultAuthenticationTypes.ApplicationCookie);
             // Здесь добавьте утверждения пользователя
-            //Добавили
-
-            userIdentity.AddClaim(new Claim("ClaimTypes.AgeIdentityS", this.AgeIdentity));
-            userIdentity.AddClaim(new Claim(ClaimTypes.Gender, this.GenderIdentity));
             return userIdentity;
         }
-
-        public string GenderIdentity { get; set; }
-        public string AgeIdentity { get; set; }
     }
 
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>

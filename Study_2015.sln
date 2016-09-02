@@ -75,7 +75,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApplication32", "WebAppl
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Enet", "Enet", "{96496B79-0157-4BB2-8217-C1C4E211E6B5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsFormsApplication1", "WindowsFormsApplication1\WindowsFormsApplication1.csproj", "{5D4DF9E6-EBEB-4626-A50C-6393024D4329}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsFormsApplication1_Перечень_файлов", "WindowsFormsApplication1\WindowsFormsApplication1_Перечень_файлов.csproj", "{5D4DF9E6-EBEB-4626-A50C-6393024D4329}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Console", "Console", "{3CC1922F-D933-4E91-83AD-050E412EA349}"
 EndProject
@@ -123,7 +123,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApplication52", "WebAppl
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApplication53_Filter_WriteToFile", "WebApplication53\WebApplication53_Filter_WriteToFile.csproj", "{5E4045EB-7CD5-4670-91FD-2DE094A354A3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApplication54", "WebApplication54\WebApplication54.csproj", "{9CACFF96-B278-4648-BABA-4598C36D0D09}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApplication54_Расширение_базы_данных", "WebApplication54\WebApplication54_Расширение_базы_данных.csproj", "{9CACFF96-B278-4648-BABA-4598C36D0D09}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApplication55_Сзодаем роли_ползователей", "WebApplication55\WebApplication55_Сзодаем роли_ползователей.csproj", "{A23CC396-DE2D-479D-B376-024286B978B6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -355,6 +357,10 @@ Global
 		{9CACFF96-B278-4648-BABA-4598C36D0D09}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9CACFF96-B278-4648-BABA-4598C36D0D09}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9CACFF96-B278-4648-BABA-4598C36D0D09}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A23CC396-DE2D-479D-B376-024286B978B6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A23CC396-DE2D-479D-B376-024286B978B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A23CC396-DE2D-479D-B376-024286B978B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A23CC396-DE2D-479D-B376-024286B978B6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -416,5 +422,6 @@ Global
 		{84561E4D-4605-4475-BF49-4C6540736CC9} = {6A8DE8EC-1B75-457F-9C22-8D99C0494443}
 		{5E4045EB-7CD5-4670-91FD-2DE094A354A3} = {6A8DE8EC-1B75-457F-9C22-8D99C0494443}
 		{9CACFF96-B278-4648-BABA-4598C36D0D09} = {6A8DE8EC-1B75-457F-9C22-8D99C0494443}
+		{A23CC396-DE2D-479D-B376-024286B978B6} = {6A8DE8EC-1B75-457F-9C22-8D99C0494443}
 	EndGlobalSection
 EndGlobal
