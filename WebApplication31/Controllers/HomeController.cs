@@ -75,6 +75,10 @@ namespace WebApplication31.Controllers
         [ChildActionOnly]
         public ActionResult _DetailsCustomer()
         {
+            ViewBag.Id = new SelectList(context.Products, "Id", "Id");
+            ViewBag.FirstName = new SelectList(context.Customers, "FirstName", "FirstName");
+            ViewBag.LastName = new SelectList(context.Customers, "LastName", "LastName");
+
             return PartialView("_DetailsCustomer");
         }
 

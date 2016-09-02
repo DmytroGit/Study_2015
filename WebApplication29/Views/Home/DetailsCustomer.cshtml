@@ -1,0 +1,90 @@
+﻿@model IEnumerable<WebApplication29.Models.EF.Orders>
+@{
+    ViewBag.Title = "DetailsCustomer";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@Html.Action("_DetailsCustomer")
+
+@if (Model != null)
+{
+    <table class="table table-striped">
+        <tr>
+            <th>
+                @*@Html.DisplayNameFor(model => model.Id)*@
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CountProduct)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DateOrder)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Products.NameProduct)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Products.Price)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Products.Description)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Products.DateAdd)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Customers.FirstName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Customers.LastName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Customers.DateReg)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Customers.Email)
+            </th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @*@Html.DisplayFor(modelItem => item.Id)*@
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CountProduct)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DateOrder)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Products.NameProduct)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Products.Price)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Products.Description)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Products.DateAdd)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Customers.FirstName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Customers.LastName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Customers.DateReg)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Customers.Email)
+                </td>
+            </tr>
+        }
+    </table>
+
+    <p>Общая сумма покупок пользователя: <b>@ViewBag.SummOrdersCustomer</b></p>
+}
+

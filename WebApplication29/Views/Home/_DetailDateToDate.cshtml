@@ -1,0 +1,13 @@
+﻿@model WebApplication29.Models.DetailsDateToDateModel
+
+@using (Html.BeginForm("DetailsDateToDate", "Home"))
+{
+    @Html.EditorForModel()
+    <br />
+    <input type="submit" name="MySubmit" value="Вычислить" />
+    <br />
+}
+
+Количество продаж: @ViewBag.CountOrder
+<br />
+Сумма за период: @ViewBag.SummPrice

@@ -11,7 +11,8 @@ namespace WebApplication31.Models.EF
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class Products
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -21,9 +22,22 @@ namespace WebApplication31.Models.EF
         }
     
         public int Id { get; set; }
+
+        [Required(ErrorMessage ="Наименование продукта обязательно для заплнения")]
+        [Display(Name = "Наименование продукта")]
         public string NameProduct { get; set; }
+    
+        [Required(ErrorMessage = "Цена продукта обязательна для заплнения")]
+        [Display(Name = "Цена продукта")]
         public decimal Price { get; set; }
+
+        [Required(ErrorMessage = "Описание продукта обязательна для заплнения")]
+        [Display(Name = "Описание продукта")]
         public string Description { get; set; }
+
+        [DataType(DataType.Date)]
+        [Required(ErrorMessage = "Дата добавления продукта обязательна для заплнения")]
+        [Display(Name = "Дата добавления продукта")]
         public System.DateTime DateAdd { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

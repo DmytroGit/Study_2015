@@ -1,0 +1,17 @@
+﻿@model WebApplication29.Models.DetailsCustomerModel
+
+@*<div class="form-group">
+    @Html.DropDownList("Id")
+    @Html.DropDownList("FirstName")
+    @Html.DropDownList("LastName")
+</div>*@
+
+@using (Html.BeginForm("DetailsCustomer", "Home"))
+{
+    @Html.EditorForModel()
+    <br />
+    <input type="submit" value="Вычислить" />
+    <br />
+
+}
+

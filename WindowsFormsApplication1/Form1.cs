@@ -32,7 +32,10 @@ namespace WindowsFormsApplication1
                 {
                     add(tn, directory);
                 }
-                catch { }
+                catch
+                {
+
+                }
             }
         }
 
