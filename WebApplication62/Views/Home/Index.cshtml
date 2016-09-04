@@ -1,0 +1,25 @@
+﻿@model IEnumerable<WebApplication62.Models.TestModel>
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <div>
+        <ul>
+           
+            @foreach (var item in Model)
+            {
+                <li>@item.CourseName</li>
+                <li>@item.StudentName</li>
+            }
+        </ul>
+    </div>
+</body>
+</html>

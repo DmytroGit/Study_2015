@@ -1,0 +1,38 @@
+﻿@model  IEnumerable<WebApplication61.Models.EF.Courses>
+@using  WebApplication61.Models.EF;
+@{
+
+    ViewBag.Title = "Home Page";
+}
+
+@{ 
+    TestMToMEntities context = new TestMToMEntities();
+
+
+    var listInView = context.Courses
+        .SelectMany(
+            course => course.Students,
+            (course, student) => new
+            {
+                StudentName = student.Student,
+                CourseName = course.Course
+            });
+}
+<hr />
+<h2>listInView</h2>
+@foreach (var item in listInView)
+{
+    <li>@item.StudentName</li>
+    <li>@item.CourseName</li>
+    <br />
+    <hr />
+}
+<hr />
+<h2>listOutCSharp</h2>
+@foreach (var item in Model)
+{
+    <li></li>
+    <li></li>
+    <br />
+    <hr />
+}

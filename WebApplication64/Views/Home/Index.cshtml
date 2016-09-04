@@ -1,0 +1,19 @@
+﻿@model IEnumerable<WebApplication64.Models.TestModel>
+@{
+    ViewBag.Title = "Home Page";
+}
+
+<ul id="IdAjax"></ul>
+
+@Ajax.ActionLink("1-5", "_GetDataPartial", new { Id = 1 , Idd =5 }, new AjaxOptions(){UpdateTargetId = "IdAjax"})
+<br />
+@Ajax.ActionLink("6-9", "_GetDataPartial", new { Id = "6", Idd = 10}, new AjaxOptions(){UpdateTargetId = "IdAjax"})
+<br />
+@Ajax.ActionLink("10-15", "_GetDataPartial", new { Id = "11", Idd = "15" }, new AjaxOptions(){UpdateTargetId = "IdAjax"})
+
+
+
+@section scripts
+{
+    <script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
+}

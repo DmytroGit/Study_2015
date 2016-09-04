@@ -1,0 +1,15 @@
+﻿@model IEnumerable<WebApplication64.Models.TestModel>
+
+
+@if (Model != null)
+{
+
+    foreach (var item in Model)
+    {
+        <li>@item.Id</li>
+        <li>@item.ProductName</li>
+        <br />
+        <hr />
+    }
+
+}
