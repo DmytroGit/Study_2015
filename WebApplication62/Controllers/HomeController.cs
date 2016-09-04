@@ -23,8 +23,7 @@ namespace WebApplication62.Controllers
                            StudentName = students.Student,
                            CourseName = courses.Course
                        };
-
-
+            
             return View(list);
         }
     }

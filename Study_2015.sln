@@ -139,7 +139,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApplication61_Many_To_Ma
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApplication5", "ConsoleApplication5\ConsoleApplication5.csproj", "{798376C0-9DF9-4A1F-A34C-2BE9A2D16D58}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApplication62", "WebApplication62\WebApplication62.csproj", "{2A59AC72-7683-455C-97C5-408D95C71747}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApplication62_LINQ_M_To_M_Plus_Model", "WebApplication62\WebApplication62_LINQ_M_To_M_Plus_Model.csproj", "{2A59AC72-7683-455C-97C5-408D95C71747}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApplication64_jquery.validate.unobtrusive.js", "WebApplication64\WebApplication64_jquery.validate.unobtrusive.js.csproj", "{1C222308-F44E-4C02-9F8B-1C6C14CF8E02}"
 EndProject
