@@ -1,0 +1,21 @@
+﻿@model IEnumerable<WebApplication65.Models.Order>
+@{
+    ViewBag.Title = "Home Page";
+}
+
+<div id="ajaxDiv"></div>
+
+@foreach (var item in Model)
+{
+    @Ajax.ActionLink(item.Customer, "GetAllOrderCustomer", new { Customer = item.Customer },
+    new AjaxOptions()
+    {
+        UpdateTargetId = "ajaxDiv"
+    })
+    <br />
+    <hr />
+}
+@section scripts
+{
+    <script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
+}

@@ -1,0 +1,8 @@
+﻿@model IEnumerable<WebApplication65.Models.Order>
+
+<ul>
+    @foreach (var item in Model)
+    {
+        <li>@item.Id &nbsp; @item.Customer &nbsp; @item.Product &nbsp; @item.Quantity &nbsp; </li>
+    }
+</ul>

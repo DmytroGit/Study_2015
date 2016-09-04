@@ -141,7 +141,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApplication5", "Cons
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApplication62", "WebApplication62\WebApplication62.csproj", "{2A59AC72-7683-455C-97C5-408D95C71747}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApplication64", "WebApplication64\WebApplication64.csproj", "{1C222308-F44E-4C02-9F8B-1C6C14CF8E02}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApplication64_jquery.validate.unobtrusive.js", "WebApplication64\WebApplication64_jquery.validate.unobtrusive.js.csproj", "{1C222308-F44E-4C02-9F8B-1C6C14CF8E02}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApplication65", "WebApplication65\WebApplication65.csproj", "{F9473868-C176-47C3-B311-B0E4D61122B9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -409,6 +411,10 @@ Global
 		{1C222308-F44E-4C02-9F8B-1C6C14CF8E02}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1C222308-F44E-4C02-9F8B-1C6C14CF8E02}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1C222308-F44E-4C02-9F8B-1C6C14CF8E02}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F9473868-C176-47C3-B311-B0E4D61122B9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F9473868-C176-47C3-B311-B0E4D61122B9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F9473868-C176-47C3-B311-B0E4D61122B9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F9473868-C176-47C3-B311-B0E4D61122B9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -479,5 +485,6 @@ Global
 		{798376C0-9DF9-4A1F-A34C-2BE9A2D16D58} = {3CC1922F-D933-4E91-83AD-050E412EA349}
 		{2A59AC72-7683-455C-97C5-408D95C71747} = {6A8DE8EC-1B75-457F-9C22-8D99C0494443}
 		{1C222308-F44E-4C02-9F8B-1C6C14CF8E02} = {6A8DE8EC-1B75-457F-9C22-8D99C0494443}
+		{F9473868-C176-47C3-B311-B0E4D61122B9} = {6A8DE8EC-1B75-457F-9C22-8D99C0494443}
 	EndGlobalSection
 EndGlobal
