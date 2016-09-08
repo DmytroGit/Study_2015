@@ -62,18 +62,14 @@
   <ItemGroup>
     <Compile Include="NeiroGraphUtils.cs" />
     <Compile Include="Neiron.cs" />
-    <Compile Include="MainForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="MainForm.cs" />
     <Compile Include="MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
     <Compile Include="NeiroWeb.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ShowMemoryVeight.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="ShowMemoryVeight.cs" />
     <Compile Include="ShowMemoryVeight.Designer.cs">
       <DependentUpon>ShowMemoryVeight.cs</DependentUpon>
     </Compile>
