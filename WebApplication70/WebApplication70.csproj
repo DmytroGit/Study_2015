@@ -92,10 +92,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Global.asax" />
-    <Content Include="Scrpits\JavaScript1.js" />
-    <Content Include="Scrpits\JavaScript2.js" />
-    <Content Include="Scrpits\JavaScript3.js" />
-    <Content Include="Scrpits\JavaScript4.js" />
+    <Content Include="Scrpits\JavaScript5.js" />
     <Content Include="TextFile1.txt" />
     <Content Include="Web.config" />
   </ItemGroup>
