@@ -92,6 +92,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Global.asax" />
+    <Content Include="Scripts\JavaScript.js" />
     <Content Include="TextFile1.txt" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -117,8 +118,14 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
+<<<<<<< 86b0a38b793cec5155499b92ecb0da77f7f1eebd
+=======
     <Folder Include="Scripts\" />
     <Folder Include="Views\Home\" />
+<<<<<<< HEAD
+>>>>>>> add home controller + view
+=======
+>>>>>>> master
   </ItemGroup>
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
