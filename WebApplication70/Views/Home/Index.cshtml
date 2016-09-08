@@ -1,0 +1,22 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <h1>@ViewBag.rez</h1>
+    <div>
+        @Html.ActionLink("Плюс", "Add", "Home", new { x = 10, y = 20 }, null)
+        @Html.ActionLink("Умножить", "Mul", "Home", new { x = 5, y = 5 }, null)
+        @Html.ActionLink("Минус", "Sub", "Home", new { x = 10, y = 3 }, null)
+        @Html.ActionLink("Делить", "Div", "Home", new { x = 10, y = 2 }, null)
+    </div>
+</body>
+</html>

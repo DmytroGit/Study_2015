@@ -1,0 +1,36 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>About</title>
+</head>
+<body>
+    <div> 
+        About / !Admin
+    </div>
+    <div>
+        @Html.ActionLink("Home - Index - Admin", "Index", "Home", new { area = "Admin" }, null)
+        <br />
+        @Html.ActionLink("Products - Index - Admin", "Index", "Products", new { area = "Admin" }, null)
+        <br />
+        @Html.ActionLink("Products - Create - Admin", "Create", "Products", new { area = "Admin" }, null)
+        <br />
+        @Html.ActionLink("Products - Delete - Admin", "Delete", "Products", new { area = "Admin" }, null)
+        <br />
+
+
+        @Html.ActionLink("Дома - главная", "Index", "Home", new { area = "" }, null)
+        <br />
+        @Html.ActionLink("Дома - о нас", "About", "Home", new { area = "" }, null)
+        <br />
+        @Html.ActionLink("Дома - контакты", "Contacts", "Home", new { area = "" }, null)
+        <br />
+    </div>
+</body>
+</html>
