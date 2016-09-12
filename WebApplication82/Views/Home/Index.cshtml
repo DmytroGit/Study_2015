@@ -1,0 +1,29 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <div>
+        @using (Html.BeginForm())
+        {
+            @Html.TextBox("a")
+            @Html.TextBox("b")
+            <input type="submit" name="submit" value="+" />
+            <input type="submit" name="submit" value="-" />
+            <input type="submit" name="submit" value="*" />
+            <input type="submit" name="submit" value="/" />
+        } 
+    </div>
+    <div>
+        @ViewBag.rez
+    </div>
+</body>
+</html>

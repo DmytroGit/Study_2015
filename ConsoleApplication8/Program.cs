@@ -17,10 +17,11 @@ namespace ConsoleApplication8
 
             Graphics graph = null;
 
-            var bmp = new Bitmap(150, 150);
+            var bmp = new Bitmap(Screen.PrimaryScreen.Bounds.Width, Screen.PrimaryScreen.Bounds.Height);
 
             graph = Graphics.FromImage(bmp);
 
+            //здесь берем изображение из заданных координат(x start, y start, x dist, y dist)
             graph.CopyFromScreen(0, 0, 0, 0, bmp.Size);
 
             bmp.Save("filename.jpg");

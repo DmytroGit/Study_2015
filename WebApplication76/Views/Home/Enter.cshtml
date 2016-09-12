@@ -1,0 +1,20 @@
+﻿
+@{
+    ViewBag.Title = "Вход";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Вход</h2>
+@using (Html.BeginForm("Enter", "Home"))
+{
+    @Html.Label("Логин")
+    <br />
+    @Html.TextBox("login")
+    <br />
+    @Html.Label("Пароль")
+    <br />
+    @Html.TextBox("password")
+    <br />
+    <br />
+    <input class="btn btn-info" type="submit" name="submit" value="Вход" />
+}

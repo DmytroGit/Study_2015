@@ -1,0 +1,12 @@
+﻿@model IEnumerable<WebApplication74.Models.TestModel>
+
+<p>Частичное представление_1</p>
+<ul>
+    @foreach (var item in Model)
+    {
+        <li>@item.Id</li>
+        <li>@item.Name</li>
+        <hr />
+    }
+</ul>
+<p>Частичное представление_2</p>

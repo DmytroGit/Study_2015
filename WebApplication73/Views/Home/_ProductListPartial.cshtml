@@ -1,0 +1,32 @@
+﻿@model IEnumerable<WebApplication73.Product>
+
+<p>-------------------------------------------------</p>
+<ul>
+    @foreach (var item in Model)
+    {
+        <li>@item.ID .@item.Name - @item.Price$ (@item.CreatedDate)</li>
+        <br />
+    }
+</ul>
+<p>-------------------------------------------------</p>
+
+<table border="1">
+    <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Price</th>
+        <th>CreatedDate</th>
+    </tr>
+    
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.ID</td>
+            <td>@item.Name</td>
+            <td>@item.Price</td>
+            <td>@item.CreatedDate</td>
+        </tr>
+    }
+</table>
+
+<p>-------------------------------------------------</p>

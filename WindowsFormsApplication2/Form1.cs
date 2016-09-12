@@ -64,6 +64,8 @@ namespace WindowsFormsApplication2
             {
                 //g.DrawImage(srcBitmap, 0, 0, section, GraphicsUnit.Pixel);
             }
+
+            
             //Возвращаем кусок картинки.
             return bmp;
         }

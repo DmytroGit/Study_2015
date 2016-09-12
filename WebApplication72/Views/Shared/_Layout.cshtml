@@ -1,0 +1,37 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>_Layout</title>
+</head>
+<body>
+    <div id="header">
+        <hr />
+        @Html.ActionLink("Домашняя", "Home", "Home") 
+        <br />
+        @Html.ActionLink("Продукты", "Products", "Home")
+        <br />
+        @Html.ActionLink("Сервис", "Services", "Home")
+        <br />
+        @Html.ActionLink("О нас", "About", "Home")
+        <hr />
+        <br />
+    </div>
+    <div id="body">
+        <hr />
+        @RenderBody()
+        <hr />
+    </div>
+    <div id="footer">
+        <hr />
+        Автор Я.
+        <hr />
+    </div>
+</body>
+</html>
