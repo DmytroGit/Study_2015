@@ -1,0 +1,52 @@
+﻿@model IEnumerable<WebApplication87.Models.EF.Products>
+
+@{
+    ViewBag.Title = "Главная";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Список продуктов</h2>
+
+<p>
+    @Html.ActionLink("Создать новый товар", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ProductName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ProductPrice)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ProductDescription)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ProductDateAdd)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.ProductName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ProductPrice)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ProductDescription)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ProductDateAdd)
+        </td>
+        <td>
+            @Html.ActionLink("Редактировать", "Edit", new { id=item.ProductId }) |
+            @Html.ActionLink("Детально", "Details", new { id=item.ProductId }) |
+            @Html.ActionLink("УДАЛИТЬ", "Delete", new { id=item.ProductId })
+        </td>
+    </tr>
+}
+
+</table>

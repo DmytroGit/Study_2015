@@ -1,0 +1,53 @@
+﻿@model IEnumerable<WebApplication87.Models.EF.Users>
+
+@{
+    ViewBag.Title = "Главная";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Список пользователей</h2>
+
+<p>
+    @Html.ActionLink("Создание нового пользователя", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.UserFirstName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UserLastName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UserDateRegister)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UserEmail)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.UserFirstName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UserLastName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UserDateRegister)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UserEmail)
+            </td>
+            <td>
+                @Html.ActionLink("Редактировать", "Edit", new { id = item.UserId }) |
+                @Html.ActionLink("Детально", "Details", new { id = item.UserId }) |
+                @Html.ActionLink("УДАЛИТЬ", "Delete", new { id = item.UserId })
+            </td>
+        </tr>
+    }
+
+</table>

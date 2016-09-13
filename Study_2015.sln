@@ -219,10 +219,15 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApplication84", "WebApplication84\WebApplication84.csproj", "{D87CDF9D-2A66-4F12-B5EC-450FD9B1D655}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "6_Model", "6_Model", "{522C2897-AF12-404A-88EB-B28B0771162A}"
+	ProjectSection(SolutionItems) = preProject
+		TextFile2.txt = TextFile2.txt
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApplication85", "WebApplication85\WebApplication85.csproj", "{7D6A1E28-1ABA-4EC2-AE35-ED02EC0CAF8D}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApplication86", "WebApplication86\WebApplication86.csproj", "{5263D58B-370F-47C3-8AD5-80556BBC8FD2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApplication87", "WebApplication87\WebApplication87.csproj", "{28F80AB1-6508-4795-B515-87C5827B3B6F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -610,6 +615,10 @@ Global
 		{5263D58B-370F-47C3-8AD5-80556BBC8FD2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5263D58B-370F-47C3-8AD5-80556BBC8FD2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5263D58B-370F-47C3-8AD5-80556BBC8FD2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{28F80AB1-6508-4795-B515-87C5827B3B6F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{28F80AB1-6508-4795-B515-87C5827B3B6F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{28F80AB1-6508-4795-B515-87C5827B3B6F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{28F80AB1-6508-4795-B515-87C5827B3B6F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -716,5 +725,6 @@ Global
 		{522C2897-AF12-404A-88EB-B28B0771162A} = {A9CAB90E-3E6E-48DF-82D1-4DF1DA30A42B}
 		{7D6A1E28-1ABA-4EC2-AE35-ED02EC0CAF8D} = {522C2897-AF12-404A-88EB-B28B0771162A}
 		{5263D58B-370F-47C3-8AD5-80556BBC8FD2} = {522C2897-AF12-404A-88EB-B28B0771162A}
+		{28F80AB1-6508-4795-B515-87C5827B3B6F} = {522C2897-AF12-404A-88EB-B28B0771162A}
 	EndGlobalSection
 EndGlobal

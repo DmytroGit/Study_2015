@@ -1,0 +1,52 @@
+﻿@model IEnumerable<WebApplication87.Models.EF.Orders>
+
+@{
+    ViewBag.Title = "Главная";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Список заказов</h2>
+
+<p>
+    @Html.ActionLink("Создать новый заказ", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.OrderCountProduct)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.OrderDateOrder)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Products.ProductName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Users.UserFirstName)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.OrderCountProduct)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.OrderDateOrder)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Products.ProductName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Users.UserFirstName)
+        </td>
+        <td>
+            @Html.ActionLink("Редактировать", "Edit", new { id=item.OrderId }) |
+            @Html.ActionLink("Детально", "Details", new { id=item.OrderId }) |
+            @Html.ActionLink("УДАЛИТЬ", "Delete", new { id=item.OrderId })
+        </td>
+    </tr>
+}
+
+</table>

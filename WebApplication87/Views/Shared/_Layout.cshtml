@@ -1,0 +1,30 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>_Layout</title>
+    <link href="~/Scripts/bootstrap-3.3.2-dist/css/bootstrap.min.css" rel="stylesheet" />
+    <script src="~/Scripts/bootstrap-3.3.2-dist/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div>
+            <ul>
+                <il>@Html.ActionLink("Домашняя", "Index", "Home")</il>
+                <il>@Html.ActionLink("Пользователи", "Index", "Users")</il>
+                <il>@Html.ActionLink("Товары", "Index", "Products")</il>
+                <il>@Html.ActionLink("Заказы", "Index", "Orders")</il>
+            </ul>
+        </div>
+        <div>
+            @RenderBody()
+        </div>
+    </div>
+</body>
+</html>

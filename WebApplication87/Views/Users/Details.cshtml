@@ -1,0 +1,51 @@
+﻿@model WebApplication87.Models.EF.Users
+
+@{
+    ViewBag.Title = "Детально";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Детально</h2>
+
+<div>
+    <h4>Пользователи</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.UserFirstName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UserFirstName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UserLastName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UserLastName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UserDateRegister)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UserDateRegister)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UserEmail)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UserEmail)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Редактировать", "Edit", new { id = Model.UserId }) |
+    @Html.ActionLink("Вернуться к списку", "Index")
+</p>
