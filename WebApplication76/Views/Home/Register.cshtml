@@ -1,4 +1,4 @@
-﻿
+﻿@model WebApplication76.Models.RegistrationModel
 @{
     ViewBag.Title = "Register";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -7,21 +7,21 @@
 <h2>Регистрация</h2>
 @using (Html.BeginForm("Register", "Home"))
 {
-    @Html.Label("Логин")
+    @Html.LabelFor(m=>m.login)
     <br />
-    @Html.TextBox("login")
+    @Html.TextBoxFor(m => m.login)
     <br />
-    @Html.Label("Пароль")
+    @Html.LabelFor(m => m.password)
     <br />
-    @Html.TextBox("password")
+    @Html.TextBoxFor(m => m.password)
     <br />
-    @Html.Label("Подтверждение пароля")
+    @Html.LabelFor(m => m.passwordTwo)
     <br />
-    @Html.TextBox("passwordTwo")
+    @Html.TextBoxFor(m => m.passwordTwo)
     <br />
-    @Html.Label("Email")
+    @Html.LabelFor(m => m.email)
     <br />
-    @Html.TextBox("email")
+    @Html.TextBoxFor(m => m.email)
     <br />
     <br />
     <input class="btn btn-info" type="submit" name="submit" value="Регистрация" />

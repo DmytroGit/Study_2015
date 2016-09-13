@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Web;
 using System.Web.Mvc;
+using WebApplication76.Models;
 
 namespace WebApplication76.Controllers
 {
@@ -32,18 +33,45 @@ namespace WebApplication76.Controllers
             return View();
         }
 
-        public ActionResult Enter(string login, string password)
+        public ActionResult Enter()
         {
             ViewBag.Message = "Вход.";
 
-            if (login != String.Empty && password != String.Empty && password != null && password != null)
+            var enterModel = new LoginModel();
+
+            enterModel.login = "";
+            enterModel.password = "";
+
+            return View();
+        }
+
+        public ActionResult Register()
+        {
+            ViewBag.Message = "Регистрация.";
+
+            RegistrationModel registerModel = new RegistrationModel();
+
+            registerModel.login = "";
+            registerModel.password = "";
+            registerModel.passwordTwo = "";
+            registerModel.email = "";
+
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult Enter(LoginModel model)
+        {
+            ViewBag.Message = "Вход.";
+            //login != String.Empty && password != String.Empty && password != null && password != null
+            if (model.login != String.Empty && model.password != String.Empty && model.password != null && model.password != null)
             {
                 //TODO запись в файл
                 var stream = new FileStream(@"F:\Projects\Study_2015\WebApplication76\Enter.txt", FileMode.OpenOrCreate, FileAccess.ReadWrite);
                 var writer = new StreamWriter(stream, Encoding.GetEncoding(1251));
 
-                writer.WriteLine("Логин:  " + login);
-                writer.WriteLine("Пароль: " + password);
+                writer.WriteLine("Логин:  " + model.login);
+                writer.WriteLine("Пароль: " + model.password);
                 writer.WriteLine(new string('-', 30));
 
                 stream.Seek(0, SeekOrigin.End);
@@ -54,21 +82,22 @@ namespace WebApplication76.Controllers
             return View();
         }
 
-        public ActionResult Register(string login, string password, string passwordTwo, string email)
+        [HttpPost]
+        public ActionResult Register(RegistrationModel model)
         {
             ViewBag.Message = "Регистрация.";
 
             //TODO запись в файл
-            if (login != String.Empty && password != String.Empty && passwordTwo != String.Empty && email != String.Empty && login != null && password != null && passwordTwo != null && email != null)
+            if (model.login != String.Empty && model.password != String.Empty && model.passwordTwo != String.Empty && model.email != String.Empty && model.login != null && model.password != null && model.passwordTwo != null && model.email != null)
             {
                 //TODO запись в файл
                 var stream = new FileStream(@"F:\Projects\Study_2015\WebApplication76\Register.txt", FileMode.OpenOrCreate, FileAccess.ReadWrite);
                 var writer = new StreamWriter(stream, Encoding.UTF8);
 
-                writer.WriteLine("Логин:  " + login);
-                writer.WriteLine("Пароль: " + password);
-                writer.WriteLine("Повтор пароля:  " + passwordTwo);
-                writer.WriteLine("Почта: " + email);
+                writer.WriteLine("Логин:  " + model.login);
+                writer.WriteLine("Пароль: " + model.password);
+                writer.WriteLine("Повтор пароля:  " + model.passwordTwo);
+                writer.WriteLine("Почта: " + model.email);
                 writer.WriteLine(new string('-', 30));
 
                 stream.Seek(0, SeekOrigin.End);

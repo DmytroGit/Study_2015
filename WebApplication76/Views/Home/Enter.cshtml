@@ -1,4 +1,4 @@
-﻿
+﻿@model WebApplication76.Models.LoginModel
 @{
     ViewBag.Title = "Вход";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -7,13 +7,13 @@
 <h2>Вход</h2>
 @using (Html.BeginForm("Enter", "Home"))
 {
-    @Html.Label("Логин")
+    @Html.LabelFor(m => m.login)
     <br />
-    @Html.TextBox("login")
+    @Html.TextBoxFor(m => m.login)
     <br />
-    @Html.Label("Пароль")
+    @Html.LabelFor(m => m.password)
     <br />
-    @Html.TextBox("password")
+    @Html.TextBoxFor(m => m.password)
     <br />
     <br />
     <input class="btn btn-info" type="submit" name="submit" value="Вход" />
