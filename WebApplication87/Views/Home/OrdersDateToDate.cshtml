@@ -1,0 +1,27 @@
+﻿
+@{
+    ViewBag.Title = "Отчет по продажам за период";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Отчет по продажам за период</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.Label("Начальная дата")
+    <br />
+    <input type="date" name="start" />
+    <br />
+    @Html.Label("Конечная дата")
+    <br />
+    <input type="date" name="finish" />
+    <br />
+    <input class="btn btn-primary" type="submit" value="Расчитать" />
+}
+
+<div>
+    <br />
+    Количество продаж: @ViewBag.CountOrders
+    <br />
+    Количество денег от продаж: @ViewBag.CountPrice
+</div>

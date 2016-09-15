@@ -14,17 +14,17 @@
 </head>
 <body>
     <div class="container">
-        <div>
-            <ul>
-                <il>@Html.ActionLink("Домашняя", "Index", "Home")</il>
-                <il>@Html.ActionLink("Пользователи", "Index", "Users")</il>
-                <il>@Html.ActionLink("Товары", "Index", "Products")</il>
-                <il>@Html.ActionLink("Заказы", "Index", "Orders")</il>
-            </ul>
-        </div>
-        <div>
-            @RenderBody()
-        </div>
+        <ul class="nav navbar-nav">
+            <il>@Html.ActionLink("Домашняя", "Index", "Home")</il>
+            <il>@Html.ActionLink("Пользователи", "Index", "Users")</il>
+            <il>@Html.ActionLink("Товары", "Index", "Products")</il>
+            <il>@Html.ActionLink("Заказы", "Index", "Orders")</il>
+            <il>@Html.ActionLink("Отчет по продажам за период", "OrdersDateToDate", "Home")</il>
+            <il>@Html.ActionLink("Отчет по продажам пользователя", "OrdersUser", "Home")</il>
+        </ul>
+    </div>
+    <div class="container body-content">
+        @RenderBody()
     </div>
 </body>
 </html>

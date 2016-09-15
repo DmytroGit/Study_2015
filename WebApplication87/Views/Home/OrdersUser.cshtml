@@ -1,0 +1,49 @@
+﻿@model IEnumerable<WebApplication87.Models.EF.Orders>
+@{
+    ViewBag.Title = "Покупки";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Покупки пользователя</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.Label("Введит имя пользователя")
+    <br />
+    @Html.TextBox("user")
+    <br />
+    <input type="submit" value="Посчитать" />
+    <br />
+}
+
+@if (Model != null)
+{
+    <table class="table table-bordered table-striped">
+        <tr>
+            <th>Дата заказа</th>
+            <th>Наименование товара</th>
+            <th>Цена за еденицу товара</th>
+            <th>Количество едениц товара</th>
+            <th>Имя пользователя</th>
+            <th>Фамилия пользователя</th>
+            <th>Email пользователя</th>
+        </tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.OrderDateOrder.ToShortDateString()</td>
+                <td>@item.Products.ProductName</td>
+                <td>@item.Products.ProductPrice</td>
+                <td>@item.OrderCountProduct</td>
+                <td>@item.Users.UserFirstName</td>
+                <td>@item.Users.UserLastName</td>
+                <td>@item.Users.UserEmail</td>
+            </tr>
+        }
+    </table>
+}
+
+
+<div class="text-info">
+    Количество денег от продаж пользователю: @ViewBag.CountPrice
+</div>
