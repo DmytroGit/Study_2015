@@ -1,0 +1,13 @@
+﻿@model IEnumerable<DriveInfo>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+<ul>
+    @foreach (var item in Model)
+    {
+        <li>@Html.ActionLink(item, "Index1", "Home", new { id = item }, null)</li>
+    }
+</ul>

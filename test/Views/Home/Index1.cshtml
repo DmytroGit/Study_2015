@@ -1,0 +1,14 @@
+﻿@model IEnumerable<string>
+
+@{
+    ViewBag.Title = "Index1";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index1</h2>
+<ul>
+    @foreach (var item in Model)
+    {
+        <li>@Html.ActionLink(item, "Index1", "Home", new { id = item }, null)</li>
+    }
+</ul>

@@ -16,19 +16,23 @@ namespace WindowsFormsApplication7
         {
             InitializeComponent();
 
+            //задаем интервал таймера 1 секунда
             timer1.Interval = 1000;
         }
 
+        //для кнопки "запустить таймер"
         private void buttonScaning_Click(object sender, EventArgs e)
         {
             timer1.Start();
         }
 
+        //для кнопки "останов таймера"
         private void buttonStopTimer_Click(object sender, EventArgs e)
         {
             timer1.Stop();
         }
 
+        //это выполняет таймер
         private void timer1_Tick(object sender, EventArgs e)
         {
             GetElementsFromTable();
